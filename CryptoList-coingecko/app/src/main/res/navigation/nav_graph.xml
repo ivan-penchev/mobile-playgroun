@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cryptoMarketListFragment">
+
+    <fragment
+        android:id="@+id/cryptoMarketListFragment"
+        android:name="com.penchev.exam.fragment.CryptoMarketListFragment"
+        android:label="CountriesListFragment">
+        <action
+            android:id="@+id/action_cryptoMarketListFragment_to_cryptoMarketDetailsFragment"
+            app:destination="@id/cryptoMarketDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cryptoMarketDetailsFragment"
+        android:name="com.penchev.exam.fragment.CryptoMarketDetailsFragment"
+        android:label="CryptoMarketDetailsFragment"
+        app:popUpTo="@id/cryptoMarketListFragment">
+
+        <argument
+            android:name="cryptoMarketId"
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/action_cryptoMarketDetailsFragment_to_cryptoMarketListFragment"
+            app:destination="@id/cryptoMarketListFragment" />
+    </fragment>
+
+</navigation>
